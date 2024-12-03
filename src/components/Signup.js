@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { signUpUser, checkEmailExists } from "../api"; // 引入 API 方法
 
-import './Signup.css';
+import "./Signup.css";
 
 export default function SignUp() {
     const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ export default function SignUp() {
         password: '',
         termsAccepted: false // New state for the checkbox
     });
+    const [isSubmitting, setIsSubmitting] = useState(false); // 防止多次提交
 
     const navigate = useNavigate();
 
@@ -21,14 +23,38 @@ export default function SignUp() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
         if (!formData.termsAccepted) {
             alert("You must accept the terms and conditions.");
             return;
         }
-        console.log('User Data:', formData); // For now, log the data
-        alert("You have signed up!")
+
+        if (isSubmitting) return; // 防止多次提交
+        setIsSubmitting(true);
+
+        try {
+            // 检查 email 是否已经存在
+            const emailExists = await checkEmailExists(formData.email);
+            if (emailExists) {
+                alert("This email is already registered.");
+                setIsSubmitting(false);
+                return;
+            }
+
+            // 注册用户
+            const user = await signUpUser(formData.name, formData.email, formData.password);
+            if (user) {
+                alert("Sign up successful! ");
+                navigate("/login");
+            }
+        } catch (error) {
+            console.error("Error during sign-up:", error);
+            alert("An error occurred. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleNavigateToLogin = () => {
@@ -73,7 +99,7 @@ export default function SignUp() {
                             required
                         />
                     </div>
-                    <div className="form-group" >
+                    <div className="form-group">
                         <label>
                             <input
                                 type="checkbox"
@@ -85,12 +111,16 @@ export default function SignUp() {
                             I agree with the Terms & Conditions
                         </label>
                     </div>
-                    <button type="submit" className="signup-button">Sign Up</button>
+                    <button type="submit" className="signup-button" disabled={isSubmitting}>
+                        {isSubmitting ? "Signing Up..." : "Sign Up"}
+                    </button>
                 </form>
                 <div className="login-link">
-                    <span onClick={handleNavigateToLogin} className="login-link-text"> Already have an account? Sign In</span>
+                    <span onClick={handleNavigateToLogin} className="login-link-text">
+                        Already have an account? Sign In
+                    </span>
                 </div>
-            </div >
-        </div >
+            </div>
+        </div>
     );
 }

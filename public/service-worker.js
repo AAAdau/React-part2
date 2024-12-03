@@ -1,91 +1,94 @@
-const CACHE_NAME = 'pwa-cache-v1';
+const CACHE_VERSION = 'v2'; // 更新版本号
+const STATIC_CACHE = `static-cache-${CACHE_VERSION}`;
+const DYNAMIC_CACHE = `dynamic-cache-${CACHE_VERSION}`;
 const STATIC_ASSETS = [
     '/',
     '/index.html',
+    '/styles.css',
+    // '/script.js',
+    '/icon.png',
+    '/fallback.html'
 ];
 
-// Install event: Pre-cache static assets
+// 安装事件：缓存静态资源
 self.addEventListener('install', (event) => {
+    console.log('[Service Worker] Installing...');
     event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => cache.addAll(STATIC_ASSETS))
+        caches.open(STATIC_CACHE).then((cache) => {
+            console.log('[Service Worker] Caching static assets...');
+            return cache.addAll(STATIC_ASSETS);
+        }).then(() => self.skipWaiting()) // 强制进入激活阶段
     );
 });
 
-// Fetch event: Serve from cache, fallback to network
+// 激活事件：清理旧缓存
+self.addEventListener('activate', (event) => {
+    console.log('[Service Worker] Activating...');
+    event.waitUntil(
+        caches.keys().then((keys) => {
+            return Promise.all(
+                keys.map((key) => {
+                    if (key !== STATIC_CACHE && key !== DYNAMIC_CACHE) {
+                        console.log(`[Service Worker] Deleting old cache: ${key}`);
+                        return caches.delete(key);
+                    }
+                })
+            );
+        }).then(() => self.clients.claim()) // 接管当前页面
+    );
+});
+
+// 获取事件：缓存优先，网络回退
 self.addEventListener('fetch', (event) => {
     if (event.request.method === 'GET') {
         event.respondWith(
-            caches.match(event.request).then((response) =>
-                response || fetch(event.request).then((fetchResponse) => {
-                    const clonedResponse = fetchResponse.clone();
-                    caches.open(CACHE_NAME).then((cache) =>
-                        cache.put(event.request, clonedResponse)
-                    );
-                    return fetchResponse;
-                })
-            )
+            caches.match(event.request).then((cachedResponse) => {
+                if (cachedResponse) {
+                    return cachedResponse;
+                }
+                return fetch(event.request).then((networkResponse) => {
+                    return caches.open(DYNAMIC_CACHE).then((cache) => {
+                        cache.put(event.request, networkResponse.clone());
+                        return networkResponse;
+                    });
+                });
+            }).catch(() => {
+                if (event.request.mode === 'navigate') {
+                    return caches.match('/fallback.html');
+                }
+            })
         );
     }
 });
 
-// Activate event: Cleanup old caches
-self.addEventListener('activate', (event) => {
-    event.waitUntil(
-        caches.keys().then((keys) =>
-            Promise.all(
-                keys.map((key) => {
-                    if (key !== CACHE_NAME) {
-                        return caches.delete(key);
-                    }
-                })
-            )
-        )
-    );
-});
-
-// Push notification event
-self.addEventListener('push', function (event) {
-    let options = {
+// 推送通知事件
+self.addEventListener('push', (event) => {
+    console.log('[Service Worker] Push Notification Received:', event.data.text());
+    const options = {
         body: event.data.text(),
         icon: '/icon.png',
         badge: '/badge.png',
     };
-
     event.waitUntil(
-        self.registration.showNotification('Push Notification', options)
+        self.registration.showNotification('Notification', options)
     );
 });
 
-// Background Sync for POST requests
+// 后台同步事件
 self.addEventListener('sync', (event) => {
     if (event.tag === 'sync-post') {
+        console.log('[Service Worker] Syncing post...');
         event.waitUntil(
-            fetch('/sync-endpoint', { method: 'POST' }) // Adjust to your API endpoint
+            fetch('/sync-endpoint', { method: 'POST' })
                 .then((response) => response.json())
+                .then((data) => console.log('Sync successful:', data))
                 .catch((error) => console.error('Sync failed:', error))
         );
     }
 });
 
-// Register service worker and handle push subscription
-if ('serviceWorker' in navigator && 'PushManager' in window) {
-    navigator.serviceWorker.register('/service-worker.js').then(registration => {
-        console.log('Service Worker registered with scope:', registration.scope);
-
-        // 请求推送通知权限
-        Notification.requestPermission().then(permission => {
-            if (permission === 'granted') {
-                console.log('通知权限已授予');
-                registration.pushManager.subscribe({
-                    userVisibleOnly: true,
-                    applicationServerKey: 'YOUR_PUBLIC_VAPID_KEY' // 替换为你的 VAPID 公钥
-                }).then(subscription => {
-                    console.log('Push subscription:', subscription);
-                    // 你可以将这个订阅信息发送到你的服务器以便后续发送推送通知
-                }).catch(err => console.error('Push subscription failed:', err));
-            }
-        });
-    }).catch(error => {
-        console.error('Service Worker registration failed:', error);
-    });
-}
+// 通知用户新版本可用
+self.addEventListener('controllerchange', () => {
+    console.log('[Service Worker] Controller changed, new version activated!');
+    // 可在这里实现 UI 提示，比如弹窗通知用户刷新页面
+});

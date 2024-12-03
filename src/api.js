@@ -69,3 +69,18 @@ export const loginUser = (email, password) =>
     fetch(`${BASE_URL}/users?email=${email}&password=${password}`)
         .then(response => response.json());
 
+export const signUpUser = (username, email, password) =>
+    fetch(`${BASE_URL}/users`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, email, password }),
+    }).then(response => response.json());
+
+
+export const checkEmailExists = (email) =>
+    fetch(`${BASE_URL}/users?email=${email}`)
+        .then(response => response.json())
+        .then(users => users.length > 0);
+
