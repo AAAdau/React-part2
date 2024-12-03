@@ -26,6 +26,7 @@ export default function ProductDetails({ user }) {
         }
         try {
             const userId = String(user.id); // Ensure userId is a string
+            console.log(userId)
             const cart = await getCart(userId);
             const existingProduct = cart.find(item => item.id === product.id);
 
