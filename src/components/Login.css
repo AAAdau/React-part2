@@ -1,9 +1,11 @@
+/* 登录页面 */
 .login-page {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    justify-content: center;  /* 水平居中 */
+    align-items: center;      /* 垂直居中 */
+    height: 100vh;            /* 让页面高度充满屏幕 */
     background-color: rgb(254, 244, 244);
+    margin-top: 50px;
 }
 
 .login-container {
@@ -15,8 +17,6 @@
     width: 310px;
     height: 500px;
     position: relative;
-    left: 33%;
-    top: 8%;
 }
 
 .login-container h2 {
@@ -26,17 +26,13 @@
     font-size: 40px;
     font-weight: 350;
     font-family: Georgia, 'Times New Roman', Times, serif;
-
+    margin: auto;
+    padding: 50px;
 }
 
-.login-form {
-    display: flex;
-    flex-direction: column;
-}
-
+/* 表单样式 */
 .form-group {
     margin-bottom: 15px;
-
 }
 
 .form-group input {
@@ -54,10 +50,17 @@
     outline: none;
 }
 
-.login-button {
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+    font-weight: 300;
+}
+
+/* 按钮样式 */
+.signup-button, .login-button {
     width: 100%;
     padding: 10px;
-    background-color: #f8a29d;
+    background-color: #ffc4c1;
     color: white;
     border: none;
     border-radius: 13px;
@@ -66,10 +69,11 @@
     transition: background-color 0.3s;
 }
 
-.login-button:hover {
+.signup-button:hover, .login-button:hover {
     background-color: rgb(252, 225, 225);
 }
 
+/* divider 样式 */
 .divider {
     display: flex;
     align-items: center;
@@ -90,6 +94,7 @@
     color: black;
 }
 
+/* 社交媒体按钮 */
 .google-button,
 .facebook-button {
     text-align: left;
@@ -134,17 +139,18 @@
     top: 76.5%;
 }
 
-.signup-link {
+/* 链接样式 */
+.signup-link, .login-link {
     margin-top: 45px;
     text-align: center;
 }
 
-.signup-link-text {
+.signup-link-text, .login-link-text {
     color: black;
     cursor: pointer;
     text-decoration: underline;
 }
 
-.signup-link-text:hover {
+.signup-link-text:hover, .login-link-text:hover {
     color: #0056b3;
 }

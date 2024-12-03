@@ -1,5 +1,6 @@
 /* Home.css */
 
+/* 页面整体容器 */
 .page1 {
     margin-top: 80px;
     text-align: center;
@@ -9,6 +10,7 @@
     background-color: white;
 }
 
+/* 星星评分图标 */
 .star {
     width: 120px;
     position: absolute;
@@ -16,34 +18,40 @@
     margin-top: 22px;
 }
 
+/* 标题样式 */
 h2 {
     font-size: 1.5rem;
     margin-bottom: 15px;
     margin-left: 120px;
 }
 
+/* 图片轮播容器 */
 .container {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 100vw;
     margin: 0 auto;
     overflow: hidden;
 }
 
+/* 图片样式 */
 .container img {
     width: 100%;
     height: auto;
     transition: transform 0.5s ease-in-out;
 }
 
+/* 当前显示的图片 */
 .current-image {
     display: block;
 }
 
+/* 隐藏不显示的图片 */
 .hide-current-image {
     display: none;
 }
 
+/* 左右箭头样式 */
 .arrow {
     position: absolute;
     top: 50%;
@@ -58,19 +66,23 @@ h2 {
     transition: background 0.3s ease;
 }
 
+/* 左箭头 */
 .arrow-left {
     left: 10px;
 }
 
+/* 右箭头 */
 .arrow-right {
     right: 10px;
 }
 
+/* 鼠标悬停时箭头的效果 */
 .arrow:hover {
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
 }
 
+/* 圆点指示器 */
 .circle-indicators {
     display: flex;
     justify-content: center;
@@ -78,6 +90,7 @@ h2 {
     margin-top: 10px;
 }
 
+/* 当前指示器样式 */
 .current-indicator {
     width: 12px;
     height: 12px;
@@ -88,10 +101,64 @@ h2 {
     transition: background-color 0.3s ease;
 }
 
+/* 非激活的指示器 */
 .inactive-indicator {
     background-color: #ccc;
 }
 
+/* 鼠标悬停时指示器的效果 */
 .current-indicator:hover {
     background-color: #555;
+}
+
+/* 图片上层文字和按钮 */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 22%; /* 向左偏移 */
+    transform: translate(-10%, -50%); /* 居中调整 */
+    color: white;
+    text-align: left; /* 左对齐 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-family: 'Parisienne', cursive; /* 法式字体 */
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.shop-button {
+    padding: 15px 30px; /* 增大按钮内边距 */
+    background-color: #ef6b84; /* 温柔的粉色 */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem; /* 增大字体大小 */
+    border-radius: 8px; /* 更圆的边角 */
+    transition: background-color 0.3s ease;
+    width: auto; /* 自动宽度适应内容 */
+    min-width: 220px; /* 设置最小宽度 */
+    margin-left: 70px; /* 向右偏移 */
+    margin-top: 20px;
+}
+
+.shop-button:hover {
+    background-color: #f1b6c0; /* 鼠标悬停时变色 */
+}
+
+/* 媒体查询：适配手机 */
+@media (max-width: 768px) {
+    .star {
+        width: 100px;
+        left: 40%;
+    }
+    h2 {
+        font-size: 1.2rem;
+        margin-left: 50px;
+    }
+    .shop-button {
+        font-size: 1rem; /* 在手机上稍微缩小按钮字体 */
+        min-width: 160px; /* 手机上设置最小宽度 */
+    }
 }

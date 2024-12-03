@@ -22,7 +22,9 @@ describe("SearchResults", () => {
         // Verify all products are displayed
         await waitFor(() => {
             expect(screen.getByText("Perfume A")).toBeInTheDocument();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(screen.getByText("Perfume B")).toBeInTheDocument();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(screen.getByText("Perfume C")).toBeInTheDocument();
         });
     });
@@ -50,7 +52,9 @@ describe("SearchResults", () => {
         // Ensure only matching products (Brand X) are displayed
         await waitFor(() => {
             expect(screen.getByText("Perfume A")).toBeInTheDocument();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(screen.getByText("Perfume C")).toBeInTheDocument();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(screen.queryByText("Perfume B")).toBeNull(); // Perfume B should not be shown
         });
     });

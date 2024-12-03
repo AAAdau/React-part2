@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { signUpUser } from "../api";  // Import the signUpUser function
 import './Signup.css';
 
 export default function SignUp() {
@@ -8,7 +8,7 @@ export default function SignUp() {
         name: '',
         email: '',
         password: '',
-        termsAccepted: false // New state for the checkbox
+        termsAccepted: false
     });
 
     const navigate = useNavigate();
@@ -21,14 +21,21 @@ export default function SignUp() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!formData.termsAccepted) {
             alert("You must accept the terms and conditions.");
             return;
         }
-        console.log('User Data:', formData); // For now, log the data
-        alert("You have signed up!")
+
+        try {
+            const newUser = await signUpUser(formData.name, formData.email, formData.password);
+            console.log('User signed up:', newUser);
+            alert("You have successfully signed up!");
+            navigate("/login"); // Redirect to login page after successful signup
+        } catch (error) {
+            alert("Sign-up failed. Please try again.");
+        }
     };
 
     const handleNavigateToLogin = () => {
@@ -42,9 +49,8 @@ export default function SignUp() {
                 <form onSubmit={handleSubmit} className="signup-form">
                     <div className="form-group">
                         <input
-                            placeholder="username"
+                            placeholder="Username"
                             type="text"
-                            id="name"
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
@@ -53,9 +59,8 @@ export default function SignUp() {
                     </div>
                     <div className="form-group">
                         <input
-                            placeholder="email"
+                            placeholder="Email"
                             type="email"
-                            id="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
@@ -64,16 +69,15 @@ export default function SignUp() {
                     </div>
                     <div className="form-group">
                         <input
-                            placeholder="password"
+                            placeholder="Password"
                             type="password"
-                            id="password"
                             name="password"
                             value={formData.password}
                             onChange={handleChange}
                             required
                         />
                     </div>
-                    <div className="form-group" >
+                    <div className="form-group">
                         <label>
                             <input
                                 type="checkbox"
@@ -88,9 +92,9 @@ export default function SignUp() {
                     <button type="submit" className="signup-button">Sign Up</button>
                 </form>
                 <div className="login-link">
-                    <span onClick={handleNavigateToLogin} className="login-link-text"> Already have an account? Sign In</span>
+                    <span onClick={handleNavigateToLogin} className="login-link-text">Already have an account? Sign In</span>
                 </div>
-            </div >
-        </div >
+            </div>
+        </div>
     );
 }

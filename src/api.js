@@ -1,5 +1,6 @@
 const BASE_URL = 'http://localhost:3001'; // JSON Server 的基础 URL
 
+// 获取所有图片
 export const getImages = () =>
     fetch(`${BASE_URL}/images`).then(response => response.json());
 
@@ -10,6 +11,7 @@ export const getProducts = () =>
 // 获取购物车内容
 export const getAllCart = () =>
     fetch(`${BASE_URL}/cart`).then(response => response.json());
+
 export const getCart = (userId) =>
     fetch(`${BASE_URL}/cart?userId=${userId}`).then(response => response.json());
 
@@ -38,6 +40,7 @@ export const deleteCartItem = (id) =>
         method: 'DELETE',
     });
 
+// 获取用户的收藏
 export const getFav = (userId) =>
     fetch(`${BASE_URL}/favorites?userId=${userId}`).then(response => response.json());
 
@@ -69,3 +72,12 @@ export const loginUser = (email, password) =>
     fetch(`${BASE_URL}/users?email=${email}&password=${password}`)
         .then(response => response.json());
 
+// 用户注册
+export const signUpUser = (name, email, password) =>
+    fetch(`${BASE_URL}/users`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+    }).then(response => response.json());

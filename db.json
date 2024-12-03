@@ -1,403 +1,416 @@
 {
-    "images": [
-        {
-            "id": 1,
-            "url": "https://b.stablecog.com/7d0851fd-4933-4ca3-acad-091898353de4.jpeg"
-        },
-        {
-            "id": 2,
-            "url": "https://b.stablecog.com/d118e5ea-f3b1-4cd9-bade-61b3a3673ecc.jpeg"
-        },
-        {
-            "id": 3,
-            "url": "https://b.stablecog.com/599653c3-8f3e-4bb5-a92e-fa4b1a278ace.jpeg"
-        },
-        {
-            "id": 4,
-            "url": "https://b.stablecog.com/60127de8-fc4a-4f46-a194-4c1394e9f881.jpeg"
-        }
-    ],
-    "subscriptions": [
-        {
-            "endpoint": "https://fcm.googleapis.com/fcm/send/endpoint-example",
-            "keys": {
-                "auth": "auth-example",
-                "p256dh": "p256dh-example"
-            }
-        }
-    ],
-    "products": [
-        {
-            "id": "1",
-            "name": "Elegant Fragrance",
-            "price": "$50",
-            "image": "https://m.media-amazon.com/images/I/31h3Dz19tiL._SX300_SY300_QL70_FMwebp_.jpg",
-            "category": "Women",
-            "brand": "Brand A"
-        },
-        {
-            "id": "2",
-            "name": "Luxury Perfume",
-            "price": "$70",
-            "image": "https://m.media-amazon.com/images/I/41YNfQAjjLL._SX300_SY300_QL70_FMwebp_.jpg",
-            "category": "Men",
-            "brand": "Brand B"
-        },
-        {
-            "id": "3",
-            "name": "Fresh Aroma",
-            "price": "$40",
-            "image": "https://m.media-amazon.com/images/I/71f3XY54g6L._SX466_.jpg",
-            "category": "Women",
-            "brand": "Brand C"
-        },
-        {
-            "id": "4",
-            "name": "Bold Cologne",
-            "price": "$60",
-            "image": "https://m.media-amazon.com/images/I/71j-3t4CqqL._SX522_.jpg",
-            "category": "Men",
-            "brand": "Brand A"
-        },
-        {
-            "id": "5",
-            "name": "Classic Cologne",
-            "price": "$60",
-            "image": "https://m.media-amazon.com/images/I/61Q3ckTbVeL._SX522_.jpg",
-            "category": "Men",
-            "brand": "Brand A"
-        },
-        {
-            "id": "6",
-            "name": "Signature Scent",
-            "price": "$65",
-            "image": "https://m.media-amazon.com/images/I/71abXn-lnhL._SX522_.jpg",
-            "category": "Men",
-            "brand": "Brand A"
-        },
-        {
-            "id": "7",
-            "name": "Mystic Aroma",
-            "price": "$55",
-            "image": "https://m.media-amazon.com/images/I/41gFDRhDy9L._SX300_SY300_QL70_FMwebp_.jpg",
-            "category": "Women",
-            "brand": "Brand C"
-        },
-        {
-            "id": "8",
-            "name": "Eternal Cologne",
-            "price": "$75",
-            "image": "https://m.media-amazon.com/images/I/31x8ctEt3CL._SY445_SX342_QL70_FMwebp_.jpg",
-            "category": "Men",
-            "brand": "Brand B"
-        },
-        {
-            "id": "9",
-            "name": "Sophisticated Scent",
-            "price": "$80",
-            "image": "https://m.media-amazon.com/images/I/61KOaMKbLxL._SX466_.jpg",
-            "category": "Women",
-            "brand": "Brand C"
-        },
-        {
-            "id": "10",
-            "name": "Bold Cologne",
-            "price": "$60",
-            "image": "https://m.media-amazon.com/images/I/31jbAtHTR5L._SY445_SX342_QL70_FMwebp_.jpg",
-            "category": "Men",
-            "brand": "Brand A"
-        },
-        {
-            "id": "11",
-            "name": "Timeless Essence",
-            "price": "$65",
-            "image": "https://m.media-amazon.com/images/I/314YqNAtgqL._SX300_SY300_QL70_FMwebp_.jpg",
-            "category": "Women",
-            "brand": "Brand B"
-        },
-        {
-            "id": "12",
-            "name": "Royal Cologne",
-            "price": "$90",
-            "image": "https://m.media-amazon.com/images/I/51EcA2fBYXL._SX466_.jpg",
-            "category": "Men",
-            "brand": "Brand A"
-        },
-        {
-            "id": "13",
-            "name": "Majestic Perfume",
-            "price": "$100",
-            "image": "https://m.media-amazon.com/images/I/415UY7Wip5L._SX300_SY300_QL70_FMwebp_.jpg",
-            "category": "Women",
-            "brand": "Brand B"
-        },
-        {
-            "id": "14",
-            "name": "Opulent Cologne",
-            "price": "$85",
-            "image": "https://m.media-amazon.com/images/I/716rEXN4htL._SX466_.jpg",
-            "category": "Men",
-            "brand": "Brand B"
-        },
-        {
-            "id": "15",
-            "name": "Citrus Bloom",
-            "price": "$45",
-            "image": "https://m.media-amazon.com/images/I/61Vb1iRDbkL._SX522_.jpg",
-            "category": "Women",
-            "brand": "Brand C"
-        },
-        {
-            "id": "16",
-            "name": "Wild Adventure",
-            "price": "$55",
-            "image": "https://m.media-amazon.com/images/I/71MCDkM7a9L._SX522_.jpg",
-            "category": "Men",
-            "brand": "Brand C"
-        },
-        {
-            "id": "17",
-            "name": "Sunset Dreams",
-            "price": "$50",
-            "image": "https://m.media-amazon.com/images/I/61gqH9jX2sL._SX522_.jpg",
-            "category": "Women",
-            "brand": "Brand A"
-        },
-        {
-            "id": "18",
-            "name": "Ocean Breeze",
-            "price": "$40",
-            "image": "https://m.media-amazon.com/images/I/51WBtFc28pL._SX466_.jpg",
-            "category": "Men",
-            "brand": "Brand A"
-        },
-        {
-            "id": "19",
-            "name": "Morning Dew",
-            "price": "$35",
-            "image": "https://m.media-amazon.com/images/I/61Zh8o93tiL._SX522_.jpg",
-            "category": "Women",
-            "brand": "Brand A"
-        },
-        {
-            "id": "20",
-            "name": "Mountain Escape",
-            "price": "$60",
-            "image": "https://m.media-amazon.com/images/I/61dMpnVOeZL._SX522_.jpg",
-            "category": "Men",
-            "brand": "Brand B"
-        },
-        {
-            "id": "21",
-            "name": "Amber Essence",
-            "price": "$70",
-            "image": "https://m.media-amazon.com/images/I/61s0RjHzlTL._SX522_.jpg",
-            "category": "Women",
-            "brand": "Brand B"
-        },
-        {
-            "id": "22",
-            "name": "Red Passion",
-            "price": "$85",
-            "image": "https://m.media-amazon.com/images/I/61Vd9xnifbL._SX522_.jpg",
-            "category": "Men",
-            "brand": "Brand B"
-        },
-        {
-            "id": "23",
-            "name": "Mystic Bloom",
-            "price": "$50",
-            "image": "https://m.media-amazon.com/images/I/71K3mPCg9tL._SX522_.jpg",
-            "category": "Women",
-            "brand": "Brand B"
-        },
-        {
-            "id": "24",
-            "name": "Crimson Bliss",
-            "price": "$55",
-            "image": "https://m.media-amazon.com/images/I/61NY1PlOdDL._SX522_.jpg",
-            "category": "Men",
-            "brand": "Brand C"
-        },
-        {
-            "id": "25",
-            "name": "Vanilla Dream",
-            "price": "$45",
-            "image": "https://m.media-amazon.com/images/I/61IffxUekKL._SX522_.jpg",
-            "category": "Women",
-            "brand": "Brand C"
-        },
-        {
-            "id": "26",
-            "name": "Noir Secret",
-            "price": "$70",
-            "image": "https://m.media-amazon.com/images/I/61sJZjO0TpL._SX522_.jpg",
-            "category": "Men",
-            "brand": "Brand C"
-        },
-        {
-            "id": "27",
-            "name": "Golden Horizon",
-            "price": "$80",
-            "image": "https://m.media-amazon.com/images/I/61w1I7a4TNL._SX522_.jpg",
-            "category": "Women",
-            "brand": "Brand C"
-        },
-        {
-            "id": "28",
-            "name": "Midnight Whispers",
-            "price": "$65",
-            "image": "https://m.media-amazon.com/images/I/71QZCuZT6gL._SX522_.jpg",
-            "category": "Men",
-            "brand": "Brand C"
-        },
-        {
-            "id": "29",
-            "name": "Tropical Delight",
-            "price": "$55",
-            "image": "https://m.media-amazon.com/images/I/61S6iDxlqQL._SX522_.jpg",
-            "category": "Women",
-            "brand": "Brand A"
-        },
-        {
-            "id": "30",
-            "name": "Silver Sands",
-            "price": "$45",
-            "image": "https://m.media-amazon.com/images/I/61WyXkMzqgL._SX522_.jpg",
-            "category": "Men",
-            "brand": "Brand A"
-        },
-        {
-            "id": "31",
-            "name": "Eternal Blossom",
-            "price": "$60",
-            "image": "https://m.media-amazon.com/images/I/71PCY6zPE5L._SX522_.jpg",
-            "category": "Women",
-            "brand": "Brand A"
-        },
-        {
-            "id": "32",
-            "name": "Firewood Essence",
-            "price": "$70",
-            "image": "https://m.media-amazon.com/images/I/61E1iR-e5sL._SX522_.jpg",
-            "category": "Men",
-            "brand": "Brand A"
-        },
-        {
-            "id": "33",
-            "name": "Lavender Fields",
-            "price": "$50",
-            "image": "https://m.media-amazon.com/images/I/61ayipwHtlL._SX522_.jpg",
-            "category": "Women",
-            "brand": "Brand B"
-        },
-        {
-            "id": "34",
-            "name": "Secret Garden",
-            "price": "$65",
-            "image": "https://m.media-amazon.com/images/I/61aFFUSfqyL._SX522_.jpg",
-            "category": "Men",
-            "brand": "Brand B"
-        },
-        {
-            "id": "35",
-            "name": "Velvet Night",
-            "price": "$75",
-            "image": "https://m.media-amazon.com/images/I/61n9X8f0SLL._SX522_.jpg",
-            "category": "Women",
-            "brand": "Brand C"
-        }
-    ],
-    "cart": [
-        {
-            "id": "3",
-            "name": "Fresh Aroma",
-            "price": "$40",
-            "image": "https://m.media-amazon.com/images/I/71f3XY54g6L._SX466_.jpg",
-            "category": "Women",
-            "brand": "Brand C",
-            "quantity": 1,
-            "userId": "1",
-            "rating": 3
-        },
-        {
-            "id": "3",
-            "name": "Fresh Aroma",
-            "price": "$40",
-            "image": "https://m.media-amazon.com/images/I/71f3XY54g6L._SX466_.jpg",
-            "category": "Women",
-            "brand": "Brand C",
-            "quantity": 1,
-            "userId": "2",
-            "rating": 5
-        },
-        {
-            "id": "14",
-            "name": "Bold Cologne",
-            "price": "$60",
-            "image": "https://m.media-amazon.com/images/I/716rEXN4htL._SX466_.jpg",
-            "category": "Men",
-            "brand": "Brand A",
-            "quantity": 1,
-            "userId": "1",
-            "rating": 4
-        },
-        {
-            "id": "13",
-            "name": "Bold Cologne",
-            "price": "$60",
-            "image": "https://m.media-amazon.com/images/I/415UY7Wip5L._SX300_SY300_QL70_FMwebp_.jpg",
-            "category": "Men",
-            "brand": "Brand A",
-            "quantity": 1,
-            "userId": "1",
-            "rating": 3
-        }
-    ],
-    "users": [
-        {
-            "id": "1",
-            "username": "testuser",
-            "email": "haha@example.com",
-            "password": "123456"
-        }
-    ],
-    "favorites": [
-        {
-            "id": "8",
-            "name": "Bold Cologne",
-            "price": "$60",
-            "image": "https://m.media-amazon.com/images/I/31x8ctEt3CL._SY445_SX342_QL70_FMwebp_.jpg",
-            "category": "Men",
-            "brand": "Brand A",
-            "userId": "1"
-        },
-        {
-            "id": "7",
-            "name": "Bold Cologne",
-            "price": "$60",
-            "image": "https://m.media-amazon.com/images/I/41gFDRhDy9L._SX300_SY300_QL70_FMwebp_.jpg",
-            "category": "Men",
-            "brand": "Brand A",
-            "userId": "1"
-        },
-        {
-            "id": "4",
-            "name": "Bold Cologne",
-            "price": "$60",
-            "image": "https://m.media-amazon.com/images/I/71j-3t4CqqL._SX522_.jpg",
-            "category": "Men",
-            "brand": "Brand A",
-            "userId": "1"
-        },
-        {
-            "id": "2",
-            "name": "Luxury Perfume",
-            "price": "$70",
-            "image": "https://m.media-amazon.com/images/I/41YNfQAjjLL._SX300_SY300_QL70_FMwebp_.jpg",
-            "category": "Men",
-            "brand": "Brand B",
-            "userId": "1"
-        }
-    ]
+  "images": [
+    {
+      "id": "1",
+      "url": "https://png.pngtree.com/background/20210710/original/pngtree-perfume-minimalistic-pink-poster-background-banner-picture-image_1039636.jpg"
+    },
+    {
+      "id": "2",
+      "url": "https://i.pinimg.com/originals/63/71/b9/6371b96dfb59740b017ffd3518060c66.jpg"
+    },
+    {
+      "id": "3",
+      "url": "https://img.freepik.com/premium-photo/image-elegant-perfume-bottle-blue-banner-image-website-background_1047054-3837.jpg"
+    },
+    {
+      "id": "4",
+      "url": "https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-simple-atmospheric-smoke-perfume-display-banner-image_169317.jpg"
+    }
+  ],
+  "subscriptions": [
+    {
+      "endpoint": "https://fcm.googleapis.com/fcm/send/endpoint-example",
+      "keys": {
+        "auth": "auth-example",
+        "p256dh": "p256dh-example"
+      },
+      "id": "e9f8"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Elegant Fragrance",
+      "price": "$50",
+      "image": "https://m.media-amazon.com/images/I/31h3Dz19tiL._SX300_SY300_QL70_FMwebp_.jpg",
+      "category": "Women",
+      "brand": "Brand A"
+    },
+    {
+      "id": "2",
+      "name": "Luxury Perfume",
+      "price": "$70",
+      "image": "https://m.media-amazon.com/images/I/41YNfQAjjLL._SX300_SY300_QL70_FMwebp_.jpg",
+      "category": "Men",
+      "brand": "Brand B"
+    },
+    {
+      "id": "3",
+      "name": "Fresh Aroma",
+      "price": "$40",
+      "image": "https://m.media-amazon.com/images/I/71f3XY54g6L._SX466_.jpg",
+      "category": "Women",
+      "brand": "Brand C"
+    },
+    {
+      "id": "4",
+      "name": "Bold Cologne",
+      "price": "$60",
+      "image": "https://m.media-amazon.com/images/I/71j-3t4CqqL._SX522_.jpg",
+      "category": "Men",
+      "brand": "Brand A"
+    },
+    {
+      "id": "5",
+      "name": "Classic Cologne",
+      "price": "$60",
+      "image": "https://m.media-amazon.com/images/I/61Q3ckTbVeL._SX522_.jpg",
+      "category": "Men",
+      "brand": "Brand A"
+    },
+    {
+      "id": "6",
+      "name": "Signature Scent",
+      "price": "$65",
+      "image": "https://m.media-amazon.com/images/I/71abXn-lnhL._SX522_.jpg",
+      "category": "Men",
+      "brand": "Brand A"
+    },
+    {
+      "id": "7",
+      "name": "Mystic Aroma",
+      "price": "$55",
+      "image": "https://m.media-amazon.com/images/I/41gFDRhDy9L._SX300_SY300_QL70_FMwebp_.jpg",
+      "category": "Women",
+      "brand": "Brand C"
+    },
+    {
+      "id": "8",
+      "name": "Eternal Cologne",
+      "price": "$75",
+      "image": "https://m.media-amazon.com/images/I/31x8ctEt3CL._SY445_SX342_QL70_FMwebp_.jpg",
+      "category": "Men",
+      "brand": "Brand B"
+    },
+    {
+      "id": "9",
+      "name": "Sophisticated Scent",
+      "price": "$80",
+      "image": "https://m.media-amazon.com/images/I/61KOaMKbLxL._SX466_.jpg",
+      "category": "Women",
+      "brand": "Brand C"
+    },
+    {
+      "id": "10",
+      "name": "Bold Cologne",
+      "price": "$60",
+      "image": "https://m.media-amazon.com/images/I/31jbAtHTR5L._SY445_SX342_QL70_FMwebp_.jpg",
+      "category": "Men",
+      "brand": "Brand A"
+    },
+    {
+      "id": "11",
+      "name": "Timeless Essence",
+      "price": "$65",
+      "image": "https://m.media-amazon.com/images/I/314YqNAtgqL._SX300_SY300_QL70_FMwebp_.jpg",
+      "category": "Women",
+      "brand": "Brand B"
+    },
+    {
+      "id": "12",
+      "name": "Royal Cologne",
+      "price": "$90",
+      "image": "https://m.media-amazon.com/images/I/51EcA2fBYXL._SX466_.jpg",
+      "category": "Men",
+      "brand": "Brand A"
+    },
+    {
+      "id": "13",
+      "name": "Majestic Perfume",
+      "price": "$100",
+      "image": "https://m.media-amazon.com/images/I/415UY7Wip5L._SX300_SY300_QL70_FMwebp_.jpg",
+      "category": "Women",
+      "brand": "Brand B"
+    },
+    {
+      "id": "14",
+      "name": "Opulent Cologne",
+      "price": "$85",
+      "image": "https://m.media-amazon.com/images/I/716rEXN4htL._SX466_.jpg",
+      "category": "Men",
+      "brand": "Brand B"
+    },
+    {
+      "id": "15",
+      "name": "Citrus Bloom",
+      "price": "$45",
+      "image": "https://m.media-amazon.com/images/I/61Vb1iRDbkL._SX522_.jpg",
+      "category": "Women",
+      "brand": "Brand C"
+    },
+    {
+      "id": "16",
+      "name": "Wild Adventure",
+      "price": "$55",
+      "image": "https://m.media-amazon.com/images/I/71MCDkM7a9L._SX522_.jpg",
+      "category": "Men",
+      "brand": "Brand C"
+    },
+    {
+      "id": "17",
+      "name": "Sunset Dreams",
+      "price": "$50",
+      "image": "https://m.media-amazon.com/images/I/61gqH9jX2sL._SX522_.jpg",
+      "category": "Women",
+      "brand": "Brand A"
+    },
+    {
+      "id": "18",
+      "name": "Ocean Breeze",
+      "price": "$40",
+      "image": "https://m.media-amazon.com/images/I/51WBtFc28pL._SX466_.jpg",
+      "category": "Men",
+      "brand": "Brand A"
+    },
+    {
+      "id": "19",
+      "name": "Morning Dew",
+      "price": "$35",
+      "image": "https://m.media-amazon.com/images/I/61Zh8o93tiL._SX522_.jpg",
+      "category": "Women",
+      "brand": "Brand A"
+    },
+    {
+      "id": "20",
+      "name": "Mountain Escape",
+      "price": "$60",
+      "image": "https://m.media-amazon.com/images/I/61dMpnVOeZL._SX522_.jpg",
+      "category": "Men",
+      "brand": "Brand B"
+    },
+    {
+      "id": "21",
+      "name": "Amber Essence",
+      "price": "$70",
+      "image": "https://m.media-amazon.com/images/I/61s0RjHzlTL._SX522_.jpg",
+      "category": "Women",
+      "brand": "Brand B"
+    },
+    {
+      "id": "22",
+      "name": "Red Passion",
+      "price": "$85",
+      "image": "https://m.media-amazon.com/images/I/61Vd9xnifbL._SX522_.jpg",
+      "category": "Men",
+      "brand": "Brand B"
+    },
+    {
+      "id": "23",
+      "name": "Mystic Bloom",
+      "price": "$50",
+      "image": "https://m.media-amazon.com/images/I/71K3mPCg9tL._SX522_.jpg",
+      "category": "Women",
+      "brand": "Brand B"
+    },
+    {
+      "id": "24",
+      "name": "Crimson Bliss",
+      "price": "$55",
+      "image": "https://m.media-amazon.com/images/I/61NY1PlOdDL._SX522_.jpg",
+      "category": "Men",
+      "brand": "Brand C"
+    },
+    {
+      "id": "25",
+      "name": "Vanilla Dream",
+      "price": "$45",
+      "image": "https://m.media-amazon.com/images/I/61IffxUekKL._SX522_.jpg",
+      "category": "Women",
+      "brand": "Brand C"
+    },
+    {
+      "id": "26",
+      "name": "Noir Secret",
+      "price": "$70",
+      "image": "https://m.media-amazon.com/images/I/61sJZjO0TpL._SX522_.jpg",
+      "category": "Men",
+      "brand": "Brand C"
+    },
+    {
+      "id": "27",
+      "name": "Golden Horizon",
+      "price": "$80",
+      "image": "https://m.media-amazon.com/images/I/61w1I7a4TNL._SX522_.jpg",
+      "category": "Women",
+      "brand": "Brand C"
+    },
+    {
+      "id": "28",
+      "name": "Midnight Whispers",
+      "price": "$65",
+      "image": "https://m.media-amazon.com/images/I/71QZCuZT6gL._SX522_.jpg",
+      "category": "Men",
+      "brand": "Brand C"
+    },
+    {
+      "id": "29",
+      "name": "Tropical Delight",
+      "price": "$55",
+      "image": "https://m.media-amazon.com/images/I/61S6iDxlqQL._SX522_.jpg",
+      "category": "Women",
+      "brand": "Brand A"
+    },
+    {
+      "id": "30",
+      "name": "Silver Sands",
+      "price": "$45",
+      "image": "https://m.media-amazon.com/images/I/61WyXkMzqgL._SX522_.jpg",
+      "category": "Men",
+      "brand": "Brand A"
+    },
+    {
+      "id": "31",
+      "name": "Eternal Blossom",
+      "price": "$60",
+      "image": "https://m.media-amazon.com/images/I/71PCY6zPE5L._SX522_.jpg",
+      "category": "Women",
+      "brand": "Brand A"
+    },
+    {
+      "id": "32",
+      "name": "Firewood Essence",
+      "price": "$70",
+      "image": "https://m.media-amazon.com/images/I/61E1iR-e5sL._SX522_.jpg",
+      "category": "Men",
+      "brand": "Brand A"
+    },
+    {
+      "id": "33",
+      "name": "Lavender Fields",
+      "price": "$50",
+      "image": "https://m.media-amazon.com/images/I/61ayipwHtlL._SX522_.jpg",
+      "category": "Women",
+      "brand": "Brand B"
+    },
+    {
+      "id": "34",
+      "name": "Secret Garden",
+      "price": "$65",
+      "image": "https://m.media-amazon.com/images/I/61aFFUSfqyL._SX522_.jpg",
+      "category": "Men",
+      "brand": "Brand B"
+    },
+    {
+      "id": "35",
+      "name": "Velvet Night",
+      "price": "$75",
+      "image": "https://m.media-amazon.com/images/I/61n9X8f0SLL._SX522_.jpg",
+      "category": "Women",
+      "brand": "Brand C"
+    }
+  ],
+  "cart": [
+    {
+      "id": "3",
+      "name": "Fresh Aroma",
+      "price": "$40",
+      "image": "https://m.media-amazon.com/images/I/71f3XY54g6L._SX466_.jpg",
+      "category": "Women",
+      "brand": "Brand C",
+      "quantity": 1,
+      "userId": "1",
+      "rating": 3
+    },
+    {
+      "id": "3",
+      "name": "Fresh Aroma",
+      "price": "$40",
+      "image": "https://m.media-amazon.com/images/I/71f3XY54g6L._SX466_.jpg",
+      "category": "Women",
+      "brand": "Brand C",
+      "quantity": 1,
+      "userId": "2",
+      "rating": 5
+    },
+    {
+      "id": "14",
+      "name": "Bold Cologne",
+      "price": "$60",
+      "image": "https://m.media-amazon.com/images/I/716rEXN4htL._SX466_.jpg",
+      "category": "Men",
+      "brand": "Brand A",
+      "quantity": 1,
+      "userId": "1",
+      "rating": 4
+    },
+    {
+      "id": "13",
+      "name": "Bold Cologne",
+      "price": "$60",
+      "image": "https://m.media-amazon.com/images/I/415UY7Wip5L._SX300_SY300_QL70_FMwebp_.jpg",
+      "category": "Men",
+      "brand": "Brand A",
+      "quantity": 1,
+      "userId": "1",
+      "rating": 3
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "testuser",
+      "email": "haha@example.com",
+      "password": "123456"
+    },
+    {
+      "id": "9079",
+      "name": "tumar",
+      "email": "adau20031123@gmail.com",
+      "password": "aaa"
+    },
+    {
+      "id": "b9a1",
+      "name": "edil",
+      "email": "adau20031123@gmail.com",
+      "password": "www"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "8",
+      "name": "Bold Cologne",
+      "price": "$60",
+      "image": "https://m.media-amazon.com/images/I/31x8ctEt3CL._SY445_SX342_QL70_FMwebp_.jpg",
+      "category": "Men",
+      "brand": "Brand A",
+      "userId": "1"
+    },
+    {
+      "id": "7",
+      "name": "Bold Cologne",
+      "price": "$60",
+      "image": "https://m.media-amazon.com/images/I/41gFDRhDy9L._SX300_SY300_QL70_FMwebp_.jpg",
+      "category": "Men",
+      "brand": "Brand A",
+      "userId": "1"
+    },
+    {
+      "id": "4",
+      "name": "Bold Cologne",
+      "price": "$60",
+      "image": "https://m.media-amazon.com/images/I/71j-3t4CqqL._SX522_.jpg",
+      "category": "Men",
+      "brand": "Brand A",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "name": "Luxury Perfume",
+      "price": "$70",
+      "image": "https://m.media-amazon.com/images/I/41YNfQAjjLL._SX300_SY300_QL70_FMwebp_.jpg",
+      "category": "Men",
+      "brand": "Brand B",
+      "userId": "1"
+    }
+  ]
 }

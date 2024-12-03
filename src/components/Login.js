@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './Login.css'; // Optional: Add your own styles for the Login component
-import { loginUser } from "../api";
+import { loginUser } from "../api";  // Import the loginUser function
+import './Login.css';
 
-export default function Login({ setUser }) {  // 接收 setUser 函数作为 props
+export default function Login({ setUser }) {
     const [credentials, setCredentials] = useState({
         email: '',
         password: ''
     });
+
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -18,7 +19,6 @@ export default function Login({ setUser }) {  // 接收 setUser 函数作为 pro
         }));
     };
 
-    // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -26,29 +26,15 @@ export default function Login({ setUser }) {  // 接收 setUser 函数作为 pro
             const users = await loginUser(credentials.email, credentials.password);
             if (users.length > 0) {
                 console.log('Login successful:', users[0]);
-                setUser(users[0]);  // 登录成功后更新父组件中的用户状态
-                navigate("/"); // 登录成功后跳转到主页
+                setUser(users[0]);  // Update user state after login
+                navigate("/"); // Redirect to home page
             } else {
-                alert("Invalid username or password");
+                alert("Invalid email or password.");
             }
         } catch (error) {
             console.error("Error during login:", error);
             alert("An error occurred during login. Please try again.");
         }
-    };
-
-    // Handle Google login
-    const handleGoogleLogin = () => {
-        window.open('https://accounts.google.com/signin', '_blank');
-    };
-
-    // Handle Facebook login
-    const handleFacebookLogin = () => {
-        window.open('https://www.facebook.com/login', '_blank');
-    };
-
-    const handleNavigateToSignup = () => {
-        navigate("/sign-up"); // Adjust the route as needed
     };
 
     return (
@@ -58,9 +44,8 @@ export default function Login({ setUser }) {  // 接收 setUser 函数作为 pro
                 <form onSubmit={handleSubmit} className="login-form">
                     <div className="form-group">
                         <input
-                            placeholder="email"
+                            placeholder="Email"
                             type="email"
-                            id="email"
                             name="email"
                             value={credentials.email}
                             onChange={handleChange}
@@ -69,9 +54,8 @@ export default function Login({ setUser }) {  // 接收 setUser 函数作为 pro
                     </div>
                     <div className="form-group">
                         <input
-                            placeholder="password"
+                            placeholder="Password"
                             type="password"
-                            id="password"
                             name="password"
                             value={credentials.password}
                             onChange={handleChange}
@@ -80,22 +64,6 @@ export default function Login({ setUser }) {  // 接收 setUser 函数作为 pro
                     </div>
                     <button type="submit" className="login-button">Sign In</button>
                 </form>
-                <div className="divider">
-                    <hr />
-                    <span>or</span>
-                    <hr />
-                </div>
-                <button className="google-button" onClick={handleGoogleLogin}>
-                    <img src="https://www.svgrepo.com/show/446762/google-alt.svg" width="23px" />
-                    Continue with Google
-                </button>
-                <button className="facebook-button" onClick={handleFacebookLogin}>
-                    <img src="https://www.svgrepo.com/show/503338/facebook.svg" width="23px" />
-                    Continue with Facebook
-                </button>
-                <div className="signup-link">
-                    <span onClick={handleNavigateToSignup} className="signup-link-text"> Don't have an account? Sign up</span>
-                </div>
             </div>
         </div>
     );
