@@ -3,20 +3,11 @@ import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import './Header.css';
 import homelogo from "../images/perfume-bold-brush-calligraphy-text-260nw-1886793559.jpg";
 import searchlogo from "../images/minimal-48-512.webp";
-import cartlogo from "../images/purse.svg";
 
-export default function Header() {
+export default function Header({ cartItems }) {
     const [searchTerm, setSearchTerm] = useState("");
     const navigate = useNavigate();
     const location = useLocation();
-    const [cartCount, setCartCount] = useState(0); // State to store the cart count
-
-    // Load cart count from localStorage
-    useEffect(() => {
-        const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-        const count = storedCart.reduce((total, item) => total + item.quantity, 0);
-        setCartCount(count);
-    }, []);
 
     // Handle search submission
     const handleSearch = (e) => {
@@ -51,7 +42,7 @@ export default function Header() {
                             <li>
                                 <NavLink to="/cart">
                                     {/* <img className="purse" src={cartlogo} width="20px" /> */}
-                                    Cart {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+                                    Cart {cartItems > 0 && <span className="cart-count">{cartItems}</span>}
                                 </NavLink>
                             </li>
                             <li><NavLink to="/shop">Shop</NavLink></li>

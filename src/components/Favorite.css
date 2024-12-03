@@ -5,12 +5,16 @@
     padding: 20px;
     background-color: #f9f9f9;
     font-family: Arial, sans-serif;
+    width: 1400px;
+    margin: auto;
+    margin-top: 90px;
 }
 
 .favorite-page h2 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .product-list {
@@ -32,6 +36,7 @@
 
 .product-item:hover {
     transform: translateY(-5px);
+    transform: scale(1.1);
 }
 
 .product-image {

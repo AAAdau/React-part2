@@ -1,7 +1,3 @@
-/* body {
-    background-color: rgb(245, 239, 239);
-} */
-
 .cart-page {
     margin-top: 108px;
     background-color: rgb(252, 244, 244);
@@ -22,11 +18,14 @@
     flex-direction: column;
     align-items: center;
     background-color: white;
-    max-width: 1000px;
+    max-width: 1300px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-left: 20px;
     padding: 17px;
+    margin-bottom: 30px;
+    margin: auto;
+
 }
 
 .cart p {
@@ -37,9 +36,10 @@
 
 .cart ul {
     list-style-type: none;
-    padding: 0;
     width: 100%;
     margin-bottom: 20px;
+    padding: 0;
+    margin-top: 35px;
 }
 
 .cart li {
@@ -48,6 +48,12 @@
     justify-content: space-between;
     padding: 10px 0;
     border-bottom: 1px solid #ccc;
+
+}
+
+.checkbox {
+    position: relative;
+    left: 7%;
 }
 
 .cart-item-image {
@@ -55,12 +61,13 @@
     height: 200px;
     object-fit: cover;
     border-radius: 4px;
-
+    position: relative;
+    left: 5.3%;
 }
 
 .descript-page {
     position: relative;
-    right: 16%;
+    right: 6%;
     top: 36%;
 }
 
@@ -75,7 +82,7 @@
     align-items: center;
     gap: 10px;
     position: relative;
-    left: 75%;
+    left: 43%;
 }
 
 .quantity-control button:hover {
@@ -113,7 +120,7 @@
     gap: 100px;
     width: 200px;
     position: relative;
-    right: 23%;
+    right: 4.8%;
 }
 
 .other1 {
@@ -126,22 +133,24 @@
     display: flex;
     justify-content: space-between;
     font-weight: bold;
-    width: 63.7%;
+    width: 1200px;
     padding-bottom: 10px;
     border-bottom: 2px solid #000;
     position: absolute;
-    left: 1.5%;
-    padding-left: 75px;
+    margin: auto;
+    padding-left: 70px;
 }
 
 .cart-header span {
     flex: 1;
-    padding-right: 230px;
+    padding-right: 210px;
 }
 
 .cart button {
     background-color: white;
     border: none;
+    position: relative;
+    right: 0%;
 }
 
 .continue-shopping-link {
@@ -153,4 +162,30 @@
     color: black;
     font-size: 16px;
     margin-top: 10px;
+}
+
+.login-message {
+    font-size: 1.5rem;
+    color: #ff6f61;
+    text-align: center;
+    margin-top: 120px;
+    font-weight: bold;
+    background-color: #fff3f3;
+    padding: 20px;
+    border: 1px solid #ffcccc;
+    border-radius: 8px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* General styling for rating container */
+.rating-container {
+    display: flex;
+    position: relative;
+    left: 7.2%;
+}
+
+.rated {
+    cursor: pointer;
 }

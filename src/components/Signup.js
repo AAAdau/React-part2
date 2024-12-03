@@ -28,6 +28,7 @@ export default function SignUp() {
             return;
         }
         console.log('User Data:', formData); // For now, log the data
+        alert("You have signed up!")
     };
 
     const handleNavigateToLogin = () => {

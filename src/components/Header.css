@@ -8,19 +8,21 @@ header {
     width: 100%;
     z-index: 100;
     height: 75px;
+
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .nav-left li .home-logo {
     width: 110px;
     position: absolute;
     top: 22%;
-    left: 1%;
+    left: 8%;
 }
 
 .nav-left,
@@ -32,6 +34,7 @@ header {
 .nav-left {
     margin-top: 0;
     padding-left: 0;
+
 }
 
 /* .purse {
@@ -69,14 +72,16 @@ header {
 .search-form {
     display: flex;
     position: absolute;
-    left: 8%;
-    top: 50%;
+    left: 32%;
+    top: 35%;
+
 }
 
 .search-input {
     padding: 0.5rem;
     font-size: 15px;
-    border: 2px solid white;
+    border: 2px solid;
+    border-color: #f1bec9;
     border-radius: 10px;
     margin-right: 0.5rem;
     height: 18px;
@@ -85,7 +90,7 @@ header {
 }
 
 .search-input:focus {
-    border-color: #c3507a;
+    border-color: #d53771;
     outline: none;
     /* Remove default outline */
 }

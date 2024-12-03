@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css'; // Optional: Add your own styles for the Login component
+import { loginUser } from "../api";
 
-export default function Login() {
+export default function Login({ setUser }) {  // 接收 setUser 函数作为 props
     const [credentials, setCredentials] = useState({
         email: '',
         password: ''
@@ -18,10 +19,22 @@ export default function Login() {
     };
 
     // Handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Login Data:', credentials); // For now, log the data
-        // Here you can add your API call to log in the user
+
+        try {
+            const users = await loginUser(credentials.email, credentials.password);
+            if (users.length > 0) {
+                console.log('Login successful:', users[0]);
+                setUser(users[0]);  // 登录成功后更新父组件中的用户状态
+                navigate("/"); // 登录成功后跳转到主页
+            } else {
+                alert("Invalid username or password");
+            }
+        } catch (error) {
+            console.error("Error during login:", error);
+            alert("An error occurred during login. Please try again.");
+        }
     };
 
     // Handle Google login
@@ -33,9 +46,11 @@ export default function Login() {
     const handleFacebookLogin = () => {
         window.open('https://www.facebook.com/login', '_blank');
     };
+
     const handleNavigateToSignup = () => {
         navigate("/sign-up"); // Adjust the route as needed
     };
+
     return (
         <div className="login-page">
             <div className="login-container">
@@ -43,7 +58,7 @@ export default function Login() {
                 <form onSubmit={handleSubmit} className="login-form">
                     <div className="form-group">
                         <input
-                            placeholder="username"
+                            placeholder="email"
                             type="email"
                             id="email"
                             name="email"

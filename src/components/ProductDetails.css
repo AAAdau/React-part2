@@ -1,18 +1,76 @@
 .product-details {
-    margin-top: 108px;
+    display: flex;
+    flex-direction: column;
+    /* 垂直排列 */
+    align-items: center;
+    /* 水平居中 */
+    background: white;
+    /* 背景色 */
+    border: 1px solid #ddd;
+    /* 边框 */
+    border-radius: 8px;
+    /* 圆角 */
+    padding: 15px;
+    /* 内边距 */
+    text-align: center;
+    /* 文本居中 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 阴影效果 */
+    margin: 150px;
+    /* 上下边距20px，左右居中 */
+    max-width: 200px;
+    /* 最大宽度 */
+}
+
+.product-image-large {
+    width: 100%;
+    /* 图片宽度占满容器 */
+    height: auto;
+    /* 高度自适应 */
+    border-radius: 5px;
+    /* 圆角 */
+    margin-bottom: 10px;
+    /* 图片与其他元素的间距 */
+}
+
+.product-details h2 {
+    font-size: 1.5em;
+    /* 商品名字体大小 */
+    color: #333;
+    /* 商品名颜色 */
+    margin: 10px 0;
+    /* 商品名上下边距 */
+}
+
+.product-details p {
+    margin: 5px 0;
+    /* 上下边距 */
+    color: #666;
+    /* 文本颜色 */
+    font-size: 1em;
+    /* 文本大小 */
 }
 
 .add-to-cart-button {
-    padding: 10px;
-    background-color: #c53891;
-    /* Button color */
-    color: white;
+    background-color: #ed69c3;
+    /* 按钮背景色 */
+    color: #fff;
+    /* 按钮文本颜色 */
     border: none;
+    /* 无边框 */
+    padding: 10px 15px;
+    /* 内边距 */
     border-radius: 4px;
+    /* 圆角 */
     cursor: pointer;
+    /* 鼠标指针样式 */
+    transition: background-color 0.3s;
+    /* 背景色过渡效果 */
+    margin-top: 10px;
+    /* 按钮与其他元素的间距 */
 }
 
 .add-to-cart-button:hover {
-    background-color: #c76b9a;
-    /* Hover effect */
+    background-color: #f69cd8;
+    /* 悬停时按钮背景色 */
 }
